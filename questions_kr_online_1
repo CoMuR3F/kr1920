@@ -8,12 +8,10 @@ conatins the elements of the list in
 pairs the right order.
 */
 
-pair([], []).
-pair(list, R):-
-    [x|y] = list,
-    [a|b] = y,
-    pair(b, R2),
-    append([[x, a]], R2, R).
+pair([a,b], [[a,b]]).
+pair([c,d|e], R):-
+    pairs(e, R2),
+    append([[c,d]], R2, R).
 
 
 
@@ -45,7 +43,8 @@ sum[1,5] -> [6]
 
     As we have seen in class, the reversible use of predicates is a very powerful feature of Prolog. Make use of a combination of the concatenate and invert predicates in which this technique is used.
 
-
+example([], list, list).
+example
 
 
 
