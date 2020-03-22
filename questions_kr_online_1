@@ -10,7 +10,7 @@ pairs the right order.
 
 pair([a,b], [[a,b]]).
 pair([c,d|e], R):-
-    pairs(e, R2),
+    pair(e, R2),
     append([[c,d]], R2, R).
 
 
@@ -43,8 +43,9 @@ sum[1,5] -> [6]
 
     As we have seen in class, the reversible use of predicates is a very powerful feature of Prolog. Make use of a combination of the concatenate and invert predicates in which this technique is used.
 
-example([], list, list).
-example
+?- concatenate(invert([3, 2, 1], R, [1, 2, 3, 4, 5, 6, 7])
+
+R = [4, 5, 6, 7].
 
 
 
