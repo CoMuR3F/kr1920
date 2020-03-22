@@ -1,0 +1,12 @@
+
+/*
+invert(+list, -result)
+
+The predicate is true, if the result
+contains the list in reverse order.
+*/
+
+invert([],[]).
+invert([Head|Tail], R2):-
+	invert(Tail, R),
+	append(R, [Head], R2).
