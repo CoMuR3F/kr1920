@@ -20,6 +20,8 @@ pair(list, R):-
 
     Is it possible to make a reversible use of the invert predicate? If not possible, could you justify why?
 
+? - invert(R, [1, 2, 3])
+
 of couse, you can change to order of a list so oft you want.
 You don't lose or create any elements, you only change the chronology of order, so it is reversible.
 
@@ -31,8 +33,12 @@ for each bigger list it is similar, so it is true for all.
 
     It would be able to indicate which characteristic makes a predicate not reversible.
 
-a predicate is everytime reversible, if the croweds of elements are bijective.
-a predicate is one time reversible, if the croweds of elements are injective and not surjective.
+a predicate is reversible, if the croweds of elements are bijective.
+
+invert[1,2,3] -> [3,2,1]  rev -> [1,2,3]
+
+sum[1,2,3] -> [6]         rev -> false
+sum[1,5] -> [6]
 
 
 
