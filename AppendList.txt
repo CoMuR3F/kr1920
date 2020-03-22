@@ -1,0 +1,9 @@
+
+% append( +list1, +list2, -result)
+% The predicate is true, if the result 
+% contains the elements of list1 and
+% list2 in the right order.
+
+append([], list2, list2).
+append([Head|Tail], list2, [Head|R]):-
+	append(Tail, list2, R). 
