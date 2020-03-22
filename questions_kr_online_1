@@ -1,0 +1,45 @@
+
+    Would it be possible using the concatenated predicate to get any pair of consecutive numbers from a list? If so, How would you have to use the concatenated predicate to get it?
+
+/*
+pair(+list, -result)
+the predicate is true, if the result 
+conatins the elements of the list in 
+pairs the right order.
+*/
+
+pair([], []).
+pair(list, R):-
+    [x|y] = list,
+    [a|b] = y,
+    pair(b, R2),
+    append([[x, a]], R2, R).
+
+
+
+
+    Is it possible to make a reversible use of the invert predicate? If not possible, could you justify why?
+
+of couse, you can change to order of a list so oft you want.
+You don't lose or create any elements, you only change the chronology of order, so it is reversible.
+
+if you change [1,2] -> [2,1] and change again [2,1] -> [1,2] it is true.
+for each bigger list it is similar, so it is true for all.
+
+
+
+
+    It would be able to indicate which characteristic makes a predicate not reversible.
+
+a predicate is everytime reversible, if the croweds of elements are bijective.
+a predicate is one time reversible, if the croweds of elements are injective and not surjective.
+
+
+
+
+    As we have seen in class, the reversible use of predicates is a very powerful feature of Prolog. Make use of a combination of the concatenate and invert predicates in which this technique is used.
+
+
+
+
+
