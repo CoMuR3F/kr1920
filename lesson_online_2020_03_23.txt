@@ -1,0 +1,95 @@
+/*
+jcarpioheute um 11:23 Uhr
+
+https://www.swi-prolog.org/download/stable
+
+
+
+mc1357heute um 12:11 Uhr
+
+http://rigaux.org/language-study/syntax-across-languages-per-language/Prolog.html
+
+https://www.codepoc.io/blog/prolog/4942/prolog-program-of-bubble-sort?utm_source=22
+
+
+
+jcarpioheute um 12:12 Uhr
+
+http://www.uhu.es/jose.carpio/N_95.pdf
+
+
+
+mc1357heute um 12:16 Uhr
+
+https://www2.cs.arizona.edu/classes/cs372/fall06/prolog.sli.pdf
+
+*/
+
+
+
+% append( +list1, +list2, -result)
+% The predicate is true, if the result 
+% contains the elements of list1 and
+% list2 in the right order.
+
+my_append([], list2, list2).
+my_append([Head|Tail], list2, [Head|R]):-
+	my_append(Tail, list2, R). 
+
+
+/*
+invert(+list, -result)
+
+The predicate is true, if the result
+contains the list in reverse order.
+*/
+
+invert([],[]).
+invert([Head|Tail], R2):-
+	invert(Tail, R),
+	append(R, [Head], R2).
+
+/*
+add(N1, N2, R).
+it is true, if R unify with
+the sumatory of N1 and N2.
+*/
+
+add(1, N2, N22) :- N22 is N2 + 1.
+add(N1, N2, R2) :- 
+	N12 is N1 - 1,
+	add(N12, N2, R),
+	R2 is  R+1.
+
+/*
+    Would it be possible using the concatenated predicate 
+    to get any pair of consecutive numbers from a list? 
+    If so, How would you have to use the concatenated predicate to get it?
+
+*/
+
+
+
+/*
+    Is it possible to make a reversible use of the invert predicate? 
+    If not possible, could you justify why?
+
+*/
+
+
+
+/*
+    It would be able to indicate which characteristic 
+    makes a predicate not reversible.
+
+*/
+
+
+
+/*
+    As we have seen in class, the reversible use of 
+    predicates is a very powerful feature of Prolog. 
+    Make use of a combination of the concatenate and 
+    invert predicates in which this technique is used.
+
+*/
